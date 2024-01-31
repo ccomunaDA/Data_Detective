@@ -47,13 +47,28 @@ NOTE: Innitially I ran the code without the WHERE clause and some of the display
 
 NOTE: Important information at a glance - /Date Jan.15, 2018/ - /SQL City/ - /Data in the crime scene report/ 
 
-4. Pulled the crime scene report.
+4. Pulled the crime scene report. 
 
 ```
 SELECT *
 FROM crime_scene_report
 LIMIT 10
 ```
+Result:
+
+![image](https://github.com/ccomunaDA/Data_Detective/assets/157404145/77c0f45a-b399-4a4b-9fe7-a6d6d1aeefe3)
+
+NOTES: Date is formatted as yearmonthday so since we are looking for Jan.15, 2018, it would look like 20180115. The type we are searching for is "murder" and the city we are looking for is "SQL City". Combining that with our previous code should look like:
+
+```
+SELECT *
+FROM crime_scene_report
+WHERE date = 20180115 AND type = "murder", and city = "SQL City"
+
+```
+Result:
+
+
 
 NOTE: 
 
