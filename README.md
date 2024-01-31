@@ -23,7 +23,7 @@ Data File: The primary dataset used for this analysis is the "sql-murder-mystery
 
 - SQL Lite Studio [Download Here](https://sqlitestudio.pl)
 - SQL Murder Mystery Website to follow along [Click Here](https://mystery.knightlab.com/#experienced)
-- 
+
 ### Data Analysis (Step By Step Walkthough)
 
 1. I opened SQL Lite Studio and downloaded the dataset 'sql-murder-mystery.db' to my computer. I then clicked on the "Add Database" button in SQL lite and selected the .db file.
@@ -35,12 +35,27 @@ SELECT name
 FROM sqlite_master
 WHERE type = 'table'
 ```
+Result: 
 
-Note: Innitially I ran the code without the WHERE clause and some of the displayed results like "sqlite_autoindex_get_fit_now_member_1" struck me as odd. Upon looking the SQL Murder Mystery Website, I found that I was missing the 'table' designation. After running this with the WHERE clause as shown above, I was able to better understand the importance of designating the type of data you are requesting and the impact that that can have on results.
+![image](https://github.com/ccomunaDA/Data_Detective/assets/157404145/6539412b-306b-4b3a-9668-22e2576b4d31)
+
+NOTE: Innitially I ran the code without the WHERE clause and some of the displayed results like "sqlite_autoindex_get_fit_now_member_1" struck me as odd. Upon looking the SQL Murder Mystery Website, I found that I was missing the 'table' designation. After running this with the WHERE clause as shown above, I was able to better understand the importance of designating the type of data you are requesting and the impact that that can have on results.
 
 3. I opened the experienced prompt (Link in Files) and it read as follows:
 
 "A crime has taken place and the detective needs your help. The detective gave you the crime scene report, but you somehow lost it. You vaguely remember that the crime was a ​murder​ that occurred sometime on ​Jan.15, 2018​ and that it took place in ​SQL City​. Start by retrieving the corresponding crime scene report from the police department’s database. If you want to get the most out of this mystery, try to work through it only using your SQL environment and refrain from using a notepad."
+
+NOTE: Important information at a glance - /Date Jan.15, 2018/ - /SQL City/ - /Data in the crime scene report/ 
+
+4. Pulled the crime scene report.
+
+```
+SELECT *
+FROM crime_scene_report
+LIMIT 10
+```
+
+NOTE: 
 
 ### Solution
 
